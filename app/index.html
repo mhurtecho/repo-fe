@@ -1,11 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="appZero">
 <head>
     <meta charset="UTF-8">
     <title>app-zero</title>
+
+    <link rel="stylesheet" type="text/css" href="lib/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="lib/bootstrap/dist/css/bootstrap-theme.min.css">
+
+    <link rel="stylesheet" type="text/css" href="lib/font-awesome/css/font-awesome.min.css">
+    <!-- Custom styles -->
+    <link href="css/elegant-icons-style.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/style-responsive.css" rel="stylesheet">
 </head>
 <body>
-    first version!!
-    <script src="lib/angular/angular.min.js" />
+<!--<div>-->
+    <div ui-view></div>
+<!--</div>-->
+
+<script src="lib/angular/angular.js"></script>
+<script src="lib/ui-router/release/angular-ui-router.js" ></script>
+
+<script src="appZero.js"></script>
+<script src="view/login/login.js"></script>
+<script src="view/dashboard/dashboard.js"></script>
+
+
 </body>
 </html>

@@ -4,6 +4,8 @@
   "version": "0.0.1",
   "dependencies": {
     "angular": "~1.4.0",
-    "bootstrap": "~3.2.0"
+    "bootstrap": "~3.2.0",
+    "ui-router": "~0.2.13",
+    "font-awesome": "~4.1.0"
   }
 }
