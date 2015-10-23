@@ -3,13 +3,13 @@
  */
 'use strict';
 
-var _app = angular.module('appZero', [
-    'ui.router'//,
-   // 'app.login',
-   // 'app.dashboard'
+var app = angular.module('app', [
+    'ui.router',
+    'app.login',
+    'app.dashboard'
 ]);
 
-_app.config(function ($stateProvider, $urlRouterProvider) {
+app.config(function ($stateProvider, $urlRouterProvider) {
 
 $urlRouterProvider.otherwise('/login');
 
@@ -26,7 +26,7 @@ $stateProvider
     });
 });
 
-_app.factory('shared', function () {
+app.factory('shared', function () {
     return {
         obj: {
             user: ''

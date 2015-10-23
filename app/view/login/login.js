@@ -3,13 +3,13 @@
  */
 'use strict';
 
-angular.module('appZero')
+angular.module('app.login', [])
 
     .controller('LoginCtrl',
     [ '$scope', '$location', 'shared', function($scope, $location, shared) {
         $scope.loginError = '';
-        //$scope.user = 'test';
-        //$scope.pass = 'test';
+        $scope.user = 'test';
+        $scope.pass = 'test';
         $scope.submit = function() {
             if ($scope.user == 'test' && $scope.pass == 'test') {
                 shared.obj = $scope.user;

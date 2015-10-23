@@ -93,9 +93,9 @@ table tr th { color: #688a7e;}
   -o-background-size: cover;
   background-size: cover;
     position:absolute;
-    //top:0; left:0;
     width:100%; height:100%;
-//height: 100vh;
+    /*top:0; left:0;*/
+    /*height: 100vh;*/
 }
 
 .login-form {
@@ -136,13 +136,11 @@ table tr th { color: #688a7e;}
 
 .login-form .checkbox {
     margin-bottom: 14px;
+}
+.login-form .checkbox {
+    font-weight: normal;    
     font-weight: 300;
     font-family: 'Lato', sans-serif;
-}
-.login-form input[type="checkbox"] {
-    margin-bottom: 14px;
-    font-weight: 200;
-    margin-left: 0px;
 }
 .login-form .form-control {
     position: relative;

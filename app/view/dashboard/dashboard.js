@@ -3,7 +3,7 @@
  */
 'use strict';
 
-angular.module('appZero')
+angular.module('app.dashboard', [])
 
     .controller('DashboardCtrl', ['$scope', 'shared', function ($scope, shared) {
         $scope.user = shared.obj;
