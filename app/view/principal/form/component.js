@@ -1,11 +1,8 @@
-/**
- * Created by mhurtecho on 24/10/15.
- */
 'use strict';
 
-angular.module('app.dashboard.component', [])
+angular.module('app.dashboard.form.component', [])
 
-    .controller('ComponentCtrl',
+    .controller('FormComponentCtrl',
     ['$scope', function ($scope) {
 
     }]);

@@ -3,7 +3,13 @@
  */
 'use strict';
 
-var mod = angular.module('app.dashboard', ['ui.router', 'app.dashboard.resume']);
+var mod = angular.module('app.dashboard',
+    [
+        'ui.router',
+        'app.dashboard.resume',
+        'app.dashboard.form'
+    ]
+);
 
 mod.config(
     ['$stateProvider', '$urlRouterProvider',
@@ -15,10 +21,11 @@ mod.config(
                     templateUrl: 'view/principal/dashboard/resume.html',
                     controller: 'ResumeCtrl'
                 })
-                .state('formComponent', {
-                    url: '/form/component',
+                .state('form', {
+                    url: '/form',
+                    abstract: true,
                     parent: 'principal.dashboard',
-                    templateUrl: 'view/principal/form/component.html'
+                    templateUrl: 'view/principal/form/form.html'
                 });
         }
     ]
