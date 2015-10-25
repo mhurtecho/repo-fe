@@ -3,21 +3,24 @@
  */
 'use strict';
 
-angular.module('app.login', [])
-
+angular.module('app.login', [
+        'ui.router',
+        'app.principal'
+    ]
+)
     .controller('LoginCtrl',
-    [ '$scope', '$location', 'shared', function($scope, $location, shared) {
+    ['$scope', function ($scope) {
         $scope.loginError = '';
         $scope.user = 'test';
         $scope.pass = 'test';
-        $scope.submit = function() {
+        $scope.submit = function () {
             if ($scope.user == 'test' && $scope.pass == 'test') {
-                shared.obj = $scope.user;
-                $location.path('/dashboard');
+                $scope.shared.obj = $scope.user;
+                $scope.$state.go('home');
             } else {
                 $scope.loginError = 'login error';
             }
 
             return false;
         }
-    } ]);
+    }]);

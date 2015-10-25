@@ -5,26 +5,8 @@
 
 var app = angular.module('app', [
     'ui.router',
-    'app.login',
-    'app.dashboard'
+    'app.login'
 ]);
-
-app.config(function ($stateProvider, $urlRouterProvider) {
-
-$urlRouterProvider.otherwise('/login');
-
-$stateProvider
-    .state('login', {
-        url: '/login',
-        templateUrl: 'view/login/login.html',
-        controller: 'LoginCtrl'
-    })
-    .state('dashboard', {
-        url: '/dashboard',
-        templateUrl: 'view/dashboard/dashboard.html',
-        controller: 'DashboardCtrl'
-    });
-});
 
 app.factory('shared', function () {
     return {
@@ -33,3 +15,29 @@ app.factory('shared', function () {
         }
     };
 });
+
+app.run(
+    ['$rootScope', '$state', '$stateParams', 'shared',
+        function ($rootScope, $state, $stateParams, shared) {
+            $rootScope.$state = $state;
+            $rootScope.$stateParams = $stateParams;
+            $rootScope.shared = shared;
+        }
+    ]
+);
+
+app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
+
+        $urlRouterProvider
+            .when('/', '/login')
+            .otherwise('/');
+
+        $stateProvider
+            .state('login', {
+                url: '/login',
+                templateUrl: 'view/login/login.html',
+                controller: 'LoginCtrl'
+            });
+    }
+    ]
+);
