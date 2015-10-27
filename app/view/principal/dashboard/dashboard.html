@@ -5,25 +5,16 @@
         <!--overview start-->
         <div class="row">
             <div class="col-lg-12">
-                <h3 class="page-header"><i class="fa fa-laptop"></i> Dashboard</h3>
+                <h3 class="page-header"><i class="{{overview.array[0].class}}"></i>{{overview.array[0].name}}</h3>
                 <ol class="breadcrumb">
                     <li><i class="fa fa-home"></i><a ui-sref="home">Home</a></li>
-                    <li><i class="fa fa-laptop"></i>{{panelName}}</li>
+                    <li ng-repeat="o in overview.array | orderBy : $index : true">
+                        <i class="{{o.class}}"></i>{{o.name}}
+                    </li>
                 </ol>
             </div>
         </div>
         <!--overview end-->
-        <!--<div class="row">-->
-        <!--<div class="col-lg-12">-->
-        <!--<h3 class="page-header"><i class="fa fa-file-text-o"></i> Form elements</h3>-->
-        <!--<ol class="breadcrumb">-->
-        <!--<li><i class="fa fa-home"></i><a href="../../../index.html">Home</a></li>-->
-        <!--<li><i class="icon_document_alt"></i>Forms</li>-->
-        <!--<li><i class="fa fa-file-text-o"></i>Form elements</li>-->
-        <!--</ol>-->
-        <!--</div>-->
-        <!--</div>-->
-
         <div ui-view></div>
 
     </section>

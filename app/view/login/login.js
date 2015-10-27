@@ -11,8 +11,8 @@ angular.module('app.login', [
     .controller('LoginCtrl',
     ['$scope', function ($scope) {
         $scope.loginError = '';
-        $scope.user = 'test';
-        $scope.pass = 'test';
+        //$scope.user = 'test';
+        //$scope.pass = 'test';
         $scope.submit = function () {
             if ($scope.user == 'test' && $scope.pass == 'test') {
                 $scope.shared.obj = $scope.user;

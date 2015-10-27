@@ -7,7 +7,8 @@ var mod = angular.module('app.dashboard',
     [
         'ui.router',
         'app.dashboard.resume',
-        'app.dashboard.form'
+        'app.dashboard.form',
+        'app.dashboard.table'
     ]
 );
 
@@ -26,6 +27,12 @@ mod.config(
                     abstract: true,
                     parent: 'principal.dashboard',
                     templateUrl: 'view/principal/form/form.html'
+                })
+                .state('table', {
+                    url: '/table',
+                    abstract: true,
+                    parent: 'principal.dashboard',
+                    templateUrl: 'view/principal/table/table.html'
                 });
         }
     ]
@@ -35,6 +42,7 @@ mod.controller('DashboardCtrl', ['$scope', '$state', DashboardCtrl]);
 
 function DashboardCtrl($scope) {
     $scope.user = $scope.shared.obj;
+    $scope.overview = {};
 
     /**
      * Sidebar Toggle
